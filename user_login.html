@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    
+    <!-- Style for the login page -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            width: 100%;
+            background-color: red;
+            padding: 1rem ;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Login form container styling */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-top: 80px; /* Space for navbar */
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #loginStatus {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: red;
+        }
+
+        .register-link {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: block;
+            color: #007BFF;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="/logo.png" style="mix-blend-mode:darken">
+          </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="container">
+        <div class="login-box">
+            <h2>User Login</h2>
+            <form id="loginForm">
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Password -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <!-- Login Button -->
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Login Status -->
+            <p id="loginStatus"></p>
+            <!-- Optional register link -->
+            <a href="/userreg.html" class="register-link">Don’t have an account?</a>
+        </div>
+    </div>
+
+    <!-- Firebase configuration and login script -->
+    <script type="module" src="/user-login.js"></script>
+
+</body>
+
+</html>

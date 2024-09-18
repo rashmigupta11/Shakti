@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Safety Platform</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="index.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>  
+  <!-- Header Section -->
+  <header id="header">
+    <nav>
+      <div class="logo">
+        <img src="/logo.png" style="mix-blend-mode:darken">
+      </div>
+      <div class="hamburger" id="hamburger">
+        <!-- Hamburger Icon -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Empowering Safety for Women Everywhere</h1>
+    <p>Join our platform to enhance women's safety and create a more secure environment. Together, we can make a difference.</p>
+    <button class="cta-button" id="get-started-btn">Get Started</button>
+
+    <!-- Hidden Buttons -->
+    <div class="login-buttons" id="login-buttons" style="display: none;">
+      <a href="/defence_login.html"><button class="login-button" id="login-authority">Login as Authority</button></a>
+      <a href="/user_login.html"><button class="login-button" id="login-user">Login as User</button></a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Real-Time Alerts</h3>
+        <p>Receive instant alerts to notify authorities in case of emergencies.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Location Tracking</h3>
+        <p>Track and share your location in real-time for enhanced safety.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Emergency Assistance</h3>
+        <p>Quick access to emergency services with one-touch SOS alerts.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Community Support</h3>
+        <p>Connect with a supportive network for tips and help during distress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Our Platform</h2>
+    <p>We aim to create a safe space for women where they can feel secure and protected at all times. Our platform integrates advanced technologies to ensure that help is always just a tap away. With real-time alerts, location tracking, and emergency support, we are committed to making the world a safer place for women everywhere.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 style="color: red;">Contact Us</h2>
+    <p>If you have any questions or need support, feel free to reach out to us at: support@womensafety.com</p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2024 Women Safety Platform. All rights reserved.</p>
+  </footer>
+
+  <!-- Script to handle the sticky header effect -->
+  <script>
+    const getStartedBtn = document.getElementById('get-started-btn');
+  const loginButtons = document.getElementById('login-buttons');
+
+  getStartedBtn.addEventListener('click', () => {
+    loginButtons.style.display = 'block';
+  });
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      header.classList.toggle("scrolled", window.scrollY > 0);
+    });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+      
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      
+  </script>
+
+</body>
+</html>

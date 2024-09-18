@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Application</title>
+
+    <style>
+        body {
+            background-color: #cffbc7;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #0c5645;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: #f4e3e6;
+        }
+
+        .btn-sos {
+            background-color: #fd3d60;
+            color: white;
+            font-size: 20px;
+            padding: 5px 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-sos:hover {
+            background-color: #e53e5e;
+        }
+
+        .jumbotron {
+            background-color: #f5f6f8;
+            color: rgb(16, 15, 15);
+            text-align: center;
+            padding: 50px 0px;
+            border-radius: 12px;
+            margin: 50px 100px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: white;
+            padding: 20px;
+            color: #333;
+        }
+
+        .card-header {
+            background-color: #0c5645;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .btn-primary {
+            background-color: #0c5645;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0c5645;
+        }
+
+        .footer {
+            background-color: #0c5645;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #002d72;
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 45, 114, 0.8);
+        }
+
+        .list-group-item {
+            background-color: #1a1a1a;
+            padding: 10px;
+            border: none;
+            color: white;
+        }
+
+        .list-group-item:hover {
+            background-color: #333;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .btn-sos {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Women Safety App</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showPage('emergencyContacts')">Emergency Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showPage('report')">Report Incident</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showPage('safetyTips')">Safety Tips</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="jumbotron">
+            <h1>Stay Safe, Stay Empowered</h1>
+            <p>Your safety is our priority. Be alert, stay connected, and get help in an instant!</p>
+            <a href="#" onclick="sos()" class="btn-sos">Send SOS Alert</a>
+        </div>
+
+        <!-- Features Section -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Emergency Contacts</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Save Contacts</h5>
+                            <p class="card-text">Add your trusted contacts to get instant help when needed.</p>
+                            <a href="#" onclick="showPage('emergencyContacts')" class="btn-primary">View Contacts</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Live Location Sharing</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Share Location</h5>
+                            <p class="card-text">Share your location with loved ones in real time.</p>
+                            <a href="#" onclick="locationsend()" class="btn-primary">Share Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Report Incident</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Report Safely</h5>
+                            <p class="card-text">Report any incident anonymously to the authorities.</p>
+                            <a href="#" onclick="showPage('report')" class="btn-primary">Report Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Contacts Page -->
+    <div id="emergencyContacts" class="page">
+        <div class="container">
+            <h2>Emergency Contacts</h2>
+            <p>Manage your emergency contacts here.</p>
+            <!-- Add contact management functionality here -->
+        </div>
+    </div>
+
+    <!-- Report Incident Page -->
+    <div id="report" class="page">
+        <div class="container">
+            <h2>Report Incident</h2>
+            <p>Report an incident here.</p>
+            <!-- Add incident reporting functionality here -->
+        </div>
+    </div>
+
+    <!-- Safety Tips Page -->
+    <div id="safetyTips" class="page">
+        <div class="container">
+            <h2>Safety Tips</h2>
+            <p>Learn safety tips and stay protected.</p>
+            <!-- Add safety tips content here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2024 Women Safety Application
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function sos() {
+            alert("Sending SOS alert...");
+        }
+
+        function report() {
+            alert("Report will be sent to authorities...");
+        }
+
+        function locationsend() {
+            alert("Location will be sent to saved contacts...");
+        }
+    </script>
+</body>
+
+</html>

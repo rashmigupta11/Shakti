@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Registration</title>
+
+    <!-- Firebase SDKs from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="/logo.png" style="mix-blend-mode:darken">
+          </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Police Officer Registration</h2>
+            <form id="registerForm">
+                <!-- Officer's Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- Badge/ID Number -->
+                <label for="badge">Badge Number / ID:</label>
+                <input type="text" id="badge" name="badge" required>
+
+                <!-- Rank -->
+                <label for="rank">Rank:</label>
+                <input type="text" id="rank" name="rank" required>
+
+                <!-- Station Name -->
+                <label for="station">Police Station Name:</label>
+                <input type="text" id="station" name="station" required>
+
+                <!-- Official Email -->
+                <label for="email">Official Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+
+                <!-- Password -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password">
+
+                <!-- Confirm Password -->
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password">
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+                <h3>Already have an account? <a href="/defence_login.html">Login</a></h3>
+            </form>
+        </div>
+    </div>
+
+   <script type="module" src="/defence-data.js"></script>
+</body>
+</html>

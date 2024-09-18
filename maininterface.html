@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Analytics Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            color: #0b3d91;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 70px;
+            margin-right: 0; 
+        }
+
+        .header-content {
+            text-align: center;
+            flex: 1;
+        }
+
+        .header-content h1 {
+            margin: 0;
+            font-size: 24px;
+            color: black; 
+        }
+
+        .header-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #093170; 
+        }
+
+        nav {
+            background-color: #093170;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            background-color: #0b4da1;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            /* display: block; */
+            display:flex;
+            gap: 50px;
+            overflow-wrap: normal;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .live-camera, .dashboard, .alerts {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            /* width:40vw;
+            height:30vh; */
+        }
+
+        .camera-feed>img{
+            
+            width: 35vw;
+        }
+        .dashboard-content>img{
+            
+            width: 35vw;
+        }
+
+        .camera-feed, .dashboard-content, .alerts-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .camera-feed p, .dashboard-content p, .alerts-content p {
+            color: white;
+        }
+        #btnalert {
+            background-color: rgb(47, 255, 57);
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .camera-feed{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #btnalert:hover {
+            background-color: #e53e5e;
+        }
+        .dashboard-content{
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/logo.png" alt="Logo">
+        </div>
+        <div class="header-content">
+            <h1>Women Safety Analytics Platform</h1>
+            <p>Government Surveillance and Protection Platform</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="showSection('live-camera')">Live Camera</a></li>
+            <li><a onclick="showSection('dashboard')">Dashboard</a></li>
+            <li><a onclick="showSection('alerts')">Alerts</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="live-camera" class="section active">
+            <div class="live-camera ">
+                <h2>Live Camera Monitoring</h2>
+                <div class="camera-feed">
+                    <!-- Live camera feed placeholder -->
+                     <video src="/Screen Recording 2024-09-18 184510.mp4" autoplay ></video>
+                     <p>Automatic alerts will displayed here and manual alerts will go to patrol team.</p>
+                    </div>
+                </div>
+                <!-- <div class="live-camera">
+                    <h2>Live Camera Monitoring</h2>
+                    <div class="camera-feed">
+                    <img src="women alert.jpg" alt="video feed2">
+                    <button id="btnalert" style="background-color: #e53e5e;">Alert! Abnormal gender ratio.</button>
+                    
+                    Live camera feed placeholder 
+                    <p>Automatic alerts will displayed here and manual alerts will go to patrol team.</p>
+                </div>
+            </div> -->
+            
+        </section>
+
+        <section id="dashboard" class="section">
+            <div class="dashboard">
+                <h2>Dashboard</h2>
+                <div class="dashboard-content">
+                    <!-- Dashboard content placeholder -->
+                     <video src="/Screen Recording 2024-09-18 184630.mp4" autoplay></video>
+                     <p>Surveillance data would be displayed here as figures</p>
+                    </div>
+                </div>
+                <!-- <div class="dashboard">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-content">
+                        <img src="fig2.jpg" alt="figure2">
+                    <p>Surveillance data would be displayed here</p>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="alerts" class="section">
+            <div class="alerts">
+                <h2>Alerts</h2>
+                <div class="alerts-content">
+                    <!-- Alerts content placeholder -->
+                    <p>Alert Related every data will be displayed here from database.</p>
+                </div>
+            </div>
+            <div class="alerts">
+                <h2>Alerts</h2>
+                <div class="alerts-content">
+                    <!-- Alerts content placeholder -->
+                    <p>Alert Related every data will be displayed here from database.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
